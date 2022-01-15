@@ -8,16 +8,24 @@ const validateName = require('./validateName');
 const validateAge = require('./validateAge');
 const validateTalk = require('./validateTalk');
 const validateTalkKeys = require('./validateTalkKeys');
+const editTalker = require('./editTalker');
 
 module.exports = {
   getTalkers,
   getTalkerById,
-  postLoginMiddleare: [loginValidation, generateToken],
-  postTalkerMiddleware: [
+  postLoginMiddleares: [loginValidation, generateToken],
+  postTalkerMiddlewares: [
     validateToken,
     validateName,
     validateAge,
     validateTalk,
     validateTalkKeys, 
     createTalker],
+  putTalkerIdMiddlewares: [
+    validateToken,
+    validateName,
+    validateAge,
+    validateTalk,
+    validateTalkKeys, 
+    editTalker],
 };
