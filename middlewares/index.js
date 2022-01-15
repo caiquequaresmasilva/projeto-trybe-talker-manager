@@ -9,6 +9,7 @@ const validateAge = require('./validateAge');
 const validateTalk = require('./validateTalk');
 const validateTalkKeys = require('./validateTalkKeys');
 const editTalker = require('./editTalker');
+const deleteTalker = require('./deleteTalker');
 
 module.exports = {
   getTalkers,
@@ -28,4 +29,5 @@ module.exports = {
     validateTalk,
     validateTalkKeys, 
     editTalker],
+  deleteTalkerIdMiddlewares: [validateToken, deleteTalker],
 };
