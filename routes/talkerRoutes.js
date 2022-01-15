@@ -4,14 +4,18 @@ const {
     getTalkerById, 
     postTalkerMiddlewares, 
     putTalkerIdMiddlewares,
-    deleteTalkerIdMiddlewares, 
+    deleteTalkerIdMiddlewares,
+    getSearchMiddlewares, 
 } = require('../middlewares');
 
 const router = express.Router();
 
 router.get('/', getTalkers);
-router.get('/:id', getTalkerById);
 router.post('/', postTalkerMiddlewares);
+
+router.get('/search', getSearchMiddlewares);
+
+router.get('/:id', getTalkerById);
 router.put('/:id', putTalkerIdMiddlewares);
 router.delete('/:id', deleteTalkerIdMiddlewares);
 
